@@ -1,0 +1,62 @@
+Problems with above design:
+
+* CricketData holds references to concrete display element
+objects even though it needs to call only the update method
+of these objects. It has access to too much additional information than it requires
+
+* This statement “currentScoreDisplay.update(runs,wickets,overs);”
+violates one of the most important design principle
+  ***** “Program to interfaces, not implementations.”*****
+as we are using concrete objects to share data rather than abstract interfaces.
+
+* CricketData and display elements are tightly coupled
+
+* If in future another requirement comes in and
+we need another display element to be added we need to make changes to
+the non-varying part of our code(CricketData).
+This is definitely not a good design practice and
+application might not be able to handle changes and not easy to maintain.
+
+
+How to avoid these problems?
+Use Observer Pattern
+
+Observer pattern
+
+To understand observer pattern, first you need to understand the subject and observer objects.
+
+The relation between subject and observer can easily be understood as an analogy to magazine subscription.
+
+* A magazine publisher(subject) is in the business and publishes magazines (data).
+
+* If you(user of data/observer) are interested in the magazine you subscribe(register),
+   and if a new edition is published it gets delivered to you.
+
+* If you unsubscribe(unregister) you stop getting new editions.
+
+* Publisher doesn’t know who you are and how you use the magazine,
+ it just delivers it to you because you are a subscriber(loose coupling).
+
+
+ Definition:
+
+ * The Observer Pattern defines a one to many dependency between objects so
+  that one object changes state, all of its dependents are notified and updated automatically.
+
+ Explanation:
+
+ * One to many dependency is between Subject(One) and Observer(Many).
+ * There is dependency as Observers themselves don’t have access to data.
+    They are dependent on Subject to provide them data.
+
+
+Advantages:
+Provides a loosely coupled design between objects that interact.
+Loosely coupled objects are flexible with changing requirements.
+Here loose coupling means that the interacting objects should have less information about each other. <--- ******
+
+Observer pattern provides this loose coupling as:
+
+* Subject only knows that observer implement Observer interface.Nothing more.
+* There is no need to modify Subject to add or remove observers.
+* We can reuse subject and observer classes independently of each other.
