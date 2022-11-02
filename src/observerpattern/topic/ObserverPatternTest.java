@@ -1,5 +1,7 @@
 package observerpattern.topic;
 
+
+//https://www.digitalocean.com/community/tutorials/observer-design-pattern-in-java
 public class ObserverPatternTest {
     public static void main(String[] args) {
 

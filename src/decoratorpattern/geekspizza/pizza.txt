@@ -1,0 +1,7 @@
+To understand decorator pattern let us consider a scenario
+inspired from the book “Head First Design Pattern”.
+Suppose we are building an application for a pizza store
+and we need to model their pizza classes.
+Assume they offer four types of pizzas namely Peppy Paneer,
+Farmhouse, Margherita  and Chicken Fiesta. Initially we just
+use inheritance and abstract out the common functionality in a Pizza class
