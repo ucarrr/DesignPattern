@@ -1,6 +1,10 @@
 package factorypattern.pizzastore.factorymethodpattern;
 
 public abstract class PizzaStore {
+
+
+
+
     public Pizza orderPizza(String type) {
         Pizza pizza;
         pizza = createPizza(type);
@@ -11,6 +15,5 @@ public abstract class PizzaStore {
         return pizza;
     }
 
-    //factory Method
-    abstract Pizza createPizza(String type);
+    public abstract Pizza createPizza(String type);
 }

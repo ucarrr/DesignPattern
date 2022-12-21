@@ -1,6 +1,4 @@
 package factorypattern.pizzastore.factorymethodpattern;
 
-
-
-public class NYStylePepperoniPizza extends Pizza {
+public class NYStylePepperoniPizza extends Pizza{
 }
